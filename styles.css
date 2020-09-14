@@ -1,0 +1,63 @@
+/* This style applies to everything */
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: normal;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(to top, #00ffff, #003f3f);
+}
+
+/* We style a grid to put the calculator items in there */
+.main-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+/* Every button item inside the "main-grid" div will have these properties */
+.main-grid > button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid grey;
+    background-color: rgba(255, 255, 255, .75);
+}
+
+.main-grid > button:hover {
+    background-color: rgba(255, 255, 255, .90);
+}
+
+/* This property allows us to have a button that has a span of 2 columns instead of 1 */
+.span-two {
+    grid-column: span 2;
+}
+
+/* This changes the grid part corresponding to the calculator screen, allowing us to fit
+the result of the operation and the previous one */
+.output {
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+}
+
+.output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+}

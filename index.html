@@ -7,7 +7,9 @@
     <title>Page Title</title>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <link rel='stylesheet' type='text/css' media='screen' href='styles.css'>
-    <script src='calculator.js'></script>
+    <!-- We have to add the defer attribute because the html has to be loaded before the 
+    script starts (because it needs to read variables from the HTML) -->
+    <script src='calculator.js' defer></script>
 </head>
 
 <body>
